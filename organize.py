@@ -8,7 +8,8 @@ def monitorDownloads(directory):
         for fileName in Files:
             dotIndex = fileName.rfind('.')
             filePath = os.path.join(directory, fileName)
-            fileDirectory = os.path.join("C:\\Destination\\Directory\\Path\\Here", (fileName[dotIndex+1:]).upper()) #This is the directory that you are going to put the directories for the files (example Videos/EXE/fortnite.exe)
+            #This is the directory that you are going to put the directories for the files. (example Videos/EXE/fortnite.exe)
+            fileDirectory = os.path.join("C:\\Destination\\Directory\\Path\\Here", (fileName[dotIndex+1:]).upper())
             fileDestination = os.path.join(fileDirectory, fileName)
             os.makedirs(fileDirectory, exist_ok=True)
             os.rename(filePath, fileDestination)
