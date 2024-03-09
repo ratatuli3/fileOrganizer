@@ -7,14 +7,14 @@ def monitorDownloads(directory):
         Files = set(os.listdir(directory))
         for fileName in Files:
             dotIndex = fileName.rfind('.')
-            filePath = directory+"/"+fileName
-            fileDirectory = "/home/skibidi/Videos/" + (fileName[dotIndex+1:]).upper()
-            fileDestination = fileDirectory+"/"+fileName
+            filePath = os.path.join(directory, fileName)
+            fileDirectory = os.path.join("C:\\Destination\\Directory\\Path\\Here", (fileName[dotIndex+1:]).upper())
+            fileDestination = os.path.join(fileDirectory, fileName)
             os.makedirs(fileDirectory, exist_ok=True)
             os.rename(filePath, fileDestination)
         time.sleep(5)
 
 
 if __name__ == "__main__":
-    downloadsDirectory = "/home/skibidi/Downloads"
+    downloadsDirectory = "C:\\Full\\Path\\Here"
     monitorDownloads(downloadsDirectory)
