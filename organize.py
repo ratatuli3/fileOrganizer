@@ -13,7 +13,7 @@ def monitorDownloads(directory):
             fileDestination = os.path.join(fileDirectory, fileName)
             os.makedirs(fileDirectory, exist_ok=True)
             os.rename(filePath, fileDestination)
-        time.sleep(5)
+        time.sleep(0.1)
 
 
 if __name__ == "__main__":
