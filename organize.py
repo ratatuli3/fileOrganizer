@@ -11,8 +11,9 @@ def monitorDownloads(directory):
             #This is the directory that you are going to put the directories for the files. (example Videos/EXE/fortnite.exe)
             fileDirectory = os.path.join("C:\\Destination\\Directory\\Path\\Here", (fileName[dotIndex+1:]).upper())
             fileDestination = os.path.join(fileDirectory, fileName)
-            os.makedirs(fileDirectory, exist_ok=True)
-            os.rename(filePath, fileDestination)
+            if (fileExtension != "crdownload"):
+                os.makedirs(fileDirectory, exist_ok=True)
+                os.rename(filePath, fileDestination)
         time.sleep(0.1)
 
 
